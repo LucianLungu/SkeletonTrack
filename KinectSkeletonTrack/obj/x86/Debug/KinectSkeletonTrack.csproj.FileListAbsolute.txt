@@ -1,0 +1,15 @@
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\bin\Debug\KinectSkeletonTrack.exe
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\bin\Debug\KinectSkeletonTrack.pdb
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\bin\Debug\Coding4Fun.Kinect.Wpf.dll
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\MainWindow.baml
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\MainWindow.g.cs
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\App.g.cs
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\KinectSkeletonTrack_Content.g.cs
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\KinectSkeletonTrack_MarkupCompile.cache
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\KinectSkeletonTrack.g.resources
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\WpfApplication1.Properties.Resources.resources
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\KinectSkeletonTrack.exe
+C:\Users\EAL\Desktop\C# Projects\KinectSkeletonTrack\KinectSkeletonTrack\obj\x86\Debug\KinectSkeletonTrack.pdb

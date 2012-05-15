@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
+using Coding4Fun.Kinect.Wpf;
 
 namespace WpfApplication1
 {
@@ -35,9 +36,12 @@ namespace WpfApplication1
 
         private JPoint handLeft;
 
+        const int CanvasWidth = 640;
+        const int CanvasHeight = 480;
         public MainWindow()
         {
             InitializeComponent();
+            SetupKinect();
         }
                     //setup kinect
             void SetupKinect( )
@@ -82,6 +86,25 @@ namespace WpfApplication1
 
         }
 
+        Skeleton GetFirstSkeleton (AllFramesReadyEventArgs e)
+        {
+            using (SkeletonFrame skeletonFrameData = e.OpenSkeletonFrame()) 
+            { 
+                if (skeletonFrameData == null)                    
+                    return null; 
+                skeletonFrameData.CopySkeletonDataTo(allSkeletons); 
+                Skeleton first = (from s in allSkeletons
+                                  where s.TrackingState == SkeletonTrackingState.Tracked 
+                                  select s).FirstOrDefault();
+                return first; 
+            }
+        }
+        private void GetJointLocations(Skeleton thisSkeleton)
+        {
+            handLeft = JointLocation(thisSkeleton.Joints[JointType.HandLeft]);
+        }
+            private JPoint JointLocation(Joint joint) 
+            { JPoint tmp; var scaledJoint = joint.ScaleTo(CanvasWidth, CanvasHeight , .3f, .3f); tmp.X = scaledJoint.Position.X; tmp.Y = scaledJoint.Position.Y; return tmp; }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             __kinect.Stop();
@@ -90,6 +113,17 @@ namespace WpfApplication1
         private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {
             __kinect.Stop();
+        }
+
+        private void DrawSkeleton()
+        {
+            SetElementPosition(LeftHandEllipse, handLeft);
+        }
+
+        private void SetElementPosition(FrameworkElement element, JPoint jp) 
+        { 
+            Canvas.SetLeft(element, jp.X - element.Width / 2);
+            Canvas.SetTop(element, jp.Y);
         }
     }
 }
