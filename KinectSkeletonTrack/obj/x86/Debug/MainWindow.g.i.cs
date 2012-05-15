@@ -85,9 +85,17 @@ namespace WpfApplication1 {
             switch (connectionId)
             {
             case 1:
-            this.canvas1 = ((System.Windows.Controls.Canvas)(target));
+            
+            #line 4 "..\..\..\MainWindow.xaml"
+            ((WpfApplication1.MainWindow)(target)).Closing += new System.ComponentModel.CancelEventHandler(this.Window_Closing_1);
+            
+            #line default
+            #line hidden
             return;
             case 2:
+            this.canvas1 = ((System.Windows.Controls.Canvas)(target));
+            return;
+            case 3:
             this.LeftHandEllipse = ((System.Windows.Shapes.Ellipse)(target));
             return;
             }

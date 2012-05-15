@@ -22,6 +22,19 @@ namespace WpfApplication1
     {
         KinectSensor __kinect;
 
+        bool closing = false;
+        const int skeletonCount = 6;
+        Skeleton[] allSkeletons = new Skeleton[skeletonCount];
+
+        private struct JPoint
+        {
+            public float X;
+            public float Y;
+
+        }
+
+        private JPoint handLeft;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,6 +54,8 @@ namespace WpfApplication1
 
                     __kinect.ColorStream.Enable( ColorImageFormat.RgbResolution640x480Fps30 );
 
+                    __kinect.DepthStream.Enable();
+                    __kinect.SkeletonStream.Enable();
                     // init the Depth Stream, with Near Mode Enabled
                     //KinectSensor.DepthStream.Enable( DepthImageFormat.Resolution640x480Fps30 );
                     //KinectSensor.DepthStream.Range = DepthRange.Near;
@@ -55,6 +70,12 @@ namespace WpfApplication1
 
         void _sensor_AllFramesReady( object sender, AllFramesReadyEventArgs e )
         {
+            Skeleton __skeleton = GetFirstSkeleton(e);
+
+            if (__skeleton == null)
+                return;
+            GetJointLocations(__skeleton);
+            DrawSkeleton();
 
    
 
@@ -62,6 +83,11 @@ namespace WpfApplication1
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            __kinect.Stop();
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
         {
             __kinect.Stop();
         }
